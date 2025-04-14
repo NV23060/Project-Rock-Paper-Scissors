@@ -1,53 +1,16 @@
-// Rock Paper Scissors Game
-function getComputerChoice() {
-    const choices = ["rock", "paper", "scissors"];
-    const randomIndex = Math.floor(Math.random() * 3);
-    return choices[randomIndex];
-}
-function getUserChoice() {
-    let choice = prompt("Enter rock, paper, or scissors:").toLowerCase();
-    while (!["rock", "paper", "scissors"].includes(choice)) {
-        choice = prompt("Invalid choice! Enter rock, paper, or scissors:").toLowerCase();
-    }
-    return choice;
-}
-function determineWinner(userChoice, computerChoice) {
-    if (userChoice === computerChoice) {
-        return "tie";
-    }
-    if (
-        (userChoice === "rock" && computerChoice === "scissors") ||
-        (userChoice === "scissors" && computerChoice === "paper") ||
-        (userChoice === "paper" && computerChoice === "rock")
-    ) {
-        return "user";
-    } else {
-        return "computer";
-    }
-}
-function playGame() {
-    let userScore = 0;
-    let computerScore = 0;
-    while (userScore < 3 && computerScore < 3) {
-        const userChoice = getUserChoice();
-        const computerChoice = getComputerChoice();
-        alert(`Computer chose: ${computerChoice}`);
-        let result = determineWinner(userChoice, computerChoice);
-        if (result === "user") {
-            userScore++;
-            alert("You win this round!");
-        } else if (result === "computer") {
-            computerScore++;
-            alert("Computer wins this round!");
-        } else {
-            alert("It's a tie! No points awarded.");
-        }
-        alert(`Score - You: ${userScore}, Computer: ${computerScore}`);
-    }
-    if (userScore === 3) {
-        alert("Congratulations! You won the game!");
-    } else {
-        alert("Game over! The computer won the game.");
-    }
-}
-playGame();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My first Assingment</title>
+</head>
+<body>
+  <h1>Rock Paper Scissors Game</h1>
+    <p>Open the console to play the game.</p>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
+
